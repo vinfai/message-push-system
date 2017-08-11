@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--作用：为DAO 接口提供sql，mybatis动态实现Impl，自动在SpringIoC 容器生成bean-->
+
+<mapper namespace="com.cvte.dao.IPushUrlDao">
+
+    <update id="modifyUrl" parameterType="com.cvte.entity.PushUrl" >
+        UPDATE push_url SET url =#{url} WHERE type=#{type}
+    </update>
+
+</mapper>

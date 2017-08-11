@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--作用：为DAO 接口提供sql，mybatis动态实现Impl，自动在SpringIoC 容器生成bean-->
+
+<mapper namespace="com.cvte.dao.IRequestDao">
+
+    <!--Mybatis中，当插入数据后，返回的int值并不是主键，而是插入的记录数。主键id会被赋值到输入的User对象里-->
+    <insert id="addRequestEntity" parameterType="com.cvte.entity.RequestEntity" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO request_entity(appid, content, is_tongbu, needreply, params, push, sign, template_id, time) VALUES (#{appid},#{content},#{isTongbu},#{needreply},#{params},#{push},#{sign},#{templateId},#{time})
+    </insert>
+
+
+</mapper>
